@@ -2,21 +2,23 @@
 {% load rest_framework %}
 
 {% block body %}
-    <h1>Employees List</h1>
-    <ul >
-        {% for employee in employees %}
-            <li>
-                
-                <a href="{% url 'employeedetail' employee.pk %}">
-                    Employee {{ employee.id }}: {{ employee.first_name }} {{ employee.last_name }}
-                </a>
-                
-            </li>
-        {% endfor %}
-    </ul>
-
-    <a href="{% url 'create' %}">Create New Employee</a>
-
+    <div style="padding-left: 80px; padding-top: 20px;">
+        <h1>Employees List</h1>
+        <ul >
+            {% for employee in employees %}
+                <li>
+                    
+                    <a href="{% url 'employeedetail' employee.pk %}" style="color: blue; text-decoration: cornsilk;">
+                        Employee {{ employee.id }}: {{ employee.first_name }} {{ employee.last_name }}
+                    </a>
+                    
+                </li>
+            {% endfor %}
+        </ul>
+    
+        <a href="{% url 'create' %}" class="btn btn-lg btn-success">Create New Employee</a>
+    
+    </div>
     
   
 {% endblock %}
