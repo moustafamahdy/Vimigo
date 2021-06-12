@@ -1,0 +1,20 @@
+{% extends "employees/layout.html" %}
+{% load rest_framework %}
+
+{% block body %}
+    <h1>Employees List</h1>
+    <ul >
+        {% for employee in employees %}
+            <li>
+                
+                <a href="{% url 'employeedetail' employee.pk %}">
+                    Employee {{ employee.id }}: {{ employee.first_name }} {{ employee.last_name }}
+                </a>
+                
+            </li>
+        {% endfor %}
+    </ul>
+
+    
+  
+{% endblock %}
